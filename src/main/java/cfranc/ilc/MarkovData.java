@@ -25,4 +25,29 @@ public class MarkovData {
         return theCount;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MarkovData other = (MarkovData) obj;
+        if ((this.theWord == null) ? (other.theWord != null) : !this.theWord.equals(other.theWord)) {
+            return false;
+        }
+        if (this.theCount != other.theCount) {
+            return false;
+        }
+        return true;
+    }
+    
+
 }

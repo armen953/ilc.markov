@@ -7,9 +7,14 @@ public class MarkovWord {
 	 
 	private ArrayList<MarkovData> data = new ArrayList<MarkovData>();
 
-	public MarkovWord() {
+        public MarkovWord() {
 
 	}
+        
+        public MarkovWord(String dataWord, int n){
+            data = (ArrayList<MarkovData>)processString(dataWord,n);
+        }
+
 
 	public double getSimilarity(String wordOne, String wordTwo, int n) {
 		List<MarkovData> res1 = processString(wordOne, n);
